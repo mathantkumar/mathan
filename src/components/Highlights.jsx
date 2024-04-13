@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import unibuy from "../assets/unibuy.png";
+import workkit from "../assets/workkit.png";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -60,6 +62,20 @@ const Highlights = () => {
           reliability and performance. Dive into the technical marvel that is
           Unibuy and experience e-commerce like never before! 🛒
         </div>
+      </div>
+      <div className="font-bold text-black text-xl">workkit</div>
+      <div className="flex justify-between py-10">
+        <div className="text-black sub-text">
+          Workkit, a Survey Form Builder app I drove from concept to reality! 🚀
+          Picture this: personalized surveys tailored to your heart's content,
+          all powered by Redux for seamless data management. I fine-tuned every
+          bit of code to ensure your UI states render flawlessly. And let's talk
+          testing – I went full throttle, covering every React component with
+          comprehensive unit tests to guarantee rock-solid performance and
+          reliability. So, ready to elevate your survey game with Workkit? Let's
+          dive into the tech side of things! 💻
+        </div>
+        <img src={workkit} className="w-md image" alt="workkit" />
       </div>
     </section>
   );
