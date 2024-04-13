@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
 
 body {
@@ -30,6 +29,22 @@ canvas {
   max-width: 1120px;
 }
 
+.main-text {
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.sub-text {
+  line-height: 30px;
+  margin-left: 2%;
+  margin-top: 3%;
+}
+
+.image {
+  width: 50%;
+  height: 50%;
+}
 @layer utilities {
   .flex-center {
     @apply flex items-center justify-center;
@@ -123,5 +138,9 @@ canvas {
 
   .g_fadeIn {
     @apply opacity-0 translate-y-[100px];
+  }
+
+  .text-highlight ::selection {
+    background-color: rgba(81, 97, 8, 0.1);
   }
 }

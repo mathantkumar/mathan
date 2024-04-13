@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        Cabin: ["Cabin"],
+      },
       colors: {
         blue: "#2997FF",
         gray: {

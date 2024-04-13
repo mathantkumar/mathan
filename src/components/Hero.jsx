@@ -1,54 +1,72 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import stars from "../assets/stars.mp4";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-//gsap.registerPlugin(ScrambleTextPlugin);
-var tl = gsap.timeline({ defaults: { duration: 2, ease: "none" } });
 const Hero = () => {
-  useGSAP(() => {
-    gsap.to("#hero", {
-      opacity: 1,
-      delay: 0.5,
+  useEffect(() => {
+    // Register ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animation for text highlighting
+    gsap.from(".text-highlight", {
+      scrollTrigger: {
+        trigger: ".text-highlight",
+        start: "top bottom", // Start animation when top of the element hits the bottom of the viewport
+        end: "bottom top", // End animation when bottom of the element hits the top of the viewport
+        toggleActions: "play none none none", // Play animation only once
+      },
+      opacity: 0,
+      y: 20,
+      stagger: 0.1,
+      duration: 1,
     });
-    tl.to("#role", {
-      opacity: 1,
+
+    // Animation for text scaling
+    gsap.from(".text-scaling", {
+      scrollTrigger: {
+        trigger: ".text-scaling",
+        start: "top bottom", // Start animation when top of the element hits the bottom of the viewport
+        end: "bottom top", // End animation when bottom of the element hits the top of the viewport
+        toggleActions: "play none none none", // Play animation only once
+      },
+      scale: 0,
+      opacity: 0,
+      ease: "elastic.out(1, 0.3)",
       delay: 1,
-      scaleX: 1.3,
-      yoyo: false,
+      duration: 1,
     });
-    tl.to("#design-text", {
+
+    // Animation for text sequence
+    gsap.from(".text-sequence", {
+      scrollTrigger: {
+        trigger: ".text-sequence",
+        start: "top bottom", // Start animation when top of the element hits the bottom of the viewport
+        end: "bottom top", // End animation when bottom of the element hits the top of the viewport
+        toggleActions: "play none none none", // Play animation only once
+      },
       opacity: 1,
-      delay: 1.1,
-      scaleX: 1,
-      yoyo: false,
+      ease: "elastic.out(1, 0.3)",
+      delay: 1,
+      duration: 2,
     });
   }, []);
+
   return (
-    <section className=" nav-height bg-black relative">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline={true}
-        key={stars}
-        className="pointer-events-none"
-      >
-        <source src={stars} type="video/mp4" />
-      </video>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-        <p id="hero" className="text-5xl font-semibold text-white opacity-0 ">
-          Hello, 👋🏻 I'm Mathan
-        </p>
-        <p id="role" className="text-5xl font-semibold text-white opacity-0">
-          Frontend Developer
-          <br />
-        </p>
-        <p
-          id="design-text"
-          className="text-gray text-2xl font-semibold opacity-0"
-        >
-          Digital design is like painting, except the paint never dries.
+    <section className="nav-height relative">
+      <div className="main-text"></div>
+      {/* Apply classes for text effects */}
+      <div className="main-text">
+        <p className="text-4xl font-semibold text-gray text-left">
+          Hey there 👋🏻, I'm Mathan I'm all about making awesome websites. You'll
+          usually find me diving deep into{" "}
+          <span className="text-highlight text-gray-800">JavaScript</span>,{" "}
+          <span className="text-highlight text-gray-800">React.js</span>, and
+          whatever else makes the web tick. Git keeps me sane, and I love
+          cooking up tests for my React components. Oh, and lately, I've been
+          poking around
+          <span className="text-sequence text-gray-800"> Java</span> and{" "}
+          <span className="text-sequence text-gray-800">Spring Boot</span> for
+          some backend shenanigans. Just rollin' with the tech flow, you know.
         </p>
       </div>
     </section>
