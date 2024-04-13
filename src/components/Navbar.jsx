@@ -16,12 +16,12 @@ const Navbar = () => {
   return (
     <header className="w-full bg-white py-5 sm:px-10 px-5 flex justify-between ">
       <nav className="flex w-full screen-max-width">
-        <h1 className="text-black text-xl font-bold">mk .</h1>
+        <h1 className="text-black text-xl font-bold py-10">mk .</h1>
         <div className="flex flex-1 justify-center max-sm:hidden">
           {navList.map((nav) => (
             <div
               key={nav}
-              className="px-5 text-sm cursor-pointer text-black font-semibold hover:text-gray transistion-all "
+              className="px-5 py-10 text-sm cursor-pointer text-black font-semibold hover:text-gray transistion-all "
               onClick={() =>
                 scrollToSection(sectionRefs[`section${index + 1}`])
               }

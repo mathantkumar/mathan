@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +52,14 @@ body {
 
 canvas {
   touch-action: none;
+}
+.wave {
+  animation-name: wave;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+  animation-timing-function: ease-in-out;
 }
 
 .dive {
@@ -41,6 +83,7 @@ canvas {
 .sub-text {
   line-height: 30px;
   margin-left: 2%;
+  margin-right: 2%;
   margin-top: 3%;
 }
 
