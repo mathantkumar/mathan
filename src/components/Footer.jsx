@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <section className="w-full bg-white">
-      <div className="text-black font-semibold text-2xl px-10">
+    <section className="w-full bg-stone-200">
+      <div className="text-black font-semibold text-2xl px-10 py-10">
         Like what you see??
       </div>
       <div className="text-gray font-semibold text-xl px-10 py-10">

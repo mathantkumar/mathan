@@ -55,8 +55,12 @@ const Highlights = () => {
           achieving 100% coverage for React components, guaranteeing top-notch
           reliability and performance. Dive into the technical marvel that is
           Unibuy and experience e-commerce like never before! 🛒
+          <br />
+          <br />
+          <span className="text-blue flex-column text-right ">Read More →</span>
         </div>
       </div>
+
       <div className="font-bold text-black text-xl">workkit</div>
       <div className="flex justify-between py-10">
         <div className="text-black sub-text text-xl py-15">
@@ -68,6 +72,9 @@ const Highlights = () => {
           with comprehensive unit tests to guarantee rock-solid performance and
           reliability. So, ready to elevate your survey game with Workkit? Let's
           dive into the tech side of things! 💻
+          <br />
+          <br />
+          <span className="text-blue flex-column text-right ">Read More →</span>
         </div>
         <img src={workkit} className="w-md image" alt="workkit" />
       </div>
